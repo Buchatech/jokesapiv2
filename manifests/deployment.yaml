@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jokesapiv2-42623-run0
+  labels:
+    app: jokesapiv2-42623-run0
+  namespace: jokesapiv2-42623-run0
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jokesapiv2-42623-run0
+  template:
+    metadata:
+      labels:
+        app: jokesapiv2-42623-run0
+    spec:
+      containers:
+        - name: jokesapiv2-42623-run0
+          image: jokesapiv241023run2arc.azurecr.io/jokesapiv2-42623-run0:latest
+          ports:
+            - containerPort: 3000
