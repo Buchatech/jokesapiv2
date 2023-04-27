@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: AzureFridayADforAKSDemo
+  labels:
+    app: AzureFridayADforAKSDemo
+  namespace: azurefridayadforaksdemo-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: AzureFridayADforAKSDemo
+  template:
+    metadata:
+      labels:
+        app: AzureFridayADforAKSDemo
+    spec:
+      containers:
+        - name: AzureFridayADforAKSDemo
+          image: azurefridayadforaksdemoacr.azurecr.io/azurefridayadforaksdemo-img:latest
+          ports:
+            - containerPort: 3000
