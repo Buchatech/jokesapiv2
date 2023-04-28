@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azurefridayadforaksdemo
+  labels:
+    app: azurefridayadforaksdemo
+  namespace: azurefridayadforaksdemo-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: azurefridayadforaksdemo
+  template:
+    metadata:
+      labels:
+        app: azurefridayadforaksdemo
+    spec:
+      containers:
+        - name: azurefridayadforaksdemo
+          image: azurefridayadforaksdemoacr.azurecr.io/azurefridayadforaksdemo-img:latest
+          ports:
+            - containerPort: 3000
