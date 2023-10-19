@@ -6,7 +6,7 @@ name: JS-test-workflow1
     workflow_dispatch: {}
 env:
     ACR_RESOURCE_GROUP: wy-rg-STEB
-    AZURE_CONTAINER_REGISTRY: registrywysteb
+    AZURE_CONTAINER_REGISTRY: acrworkflow1697742570182
     CLUSTER_NAME: aks-wy-steb
     CLUSTER_RESOURCE_GROUP: wy-rg-STEB
     CONTAINER_NAME: js-test-workflow1-img
@@ -62,4 +62,4 @@ jobs:
                 action: deploy
                 images: ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }}
                 manifests: ${{ env.DEPLOYMENT_MANIFEST_PATH }}
-                namespace: js-test-workflow1-ns
+                namespace: js-test-workflow1-1-ns
