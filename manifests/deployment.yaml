@@ -4,7 +4,7 @@ metadata:
   name: JS-test-workflow1
   labels:
     app: JS-test-workflow1
-  namespace: js-test-workflow1-ns
+  namespace: js-test-workflow1-1-ns
 spec:
   replicas: 1
   selector:
@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: JS-test-workflow1
-          image: registrywysteb.azurecr.io/js-test-workflow1-img:latest
+          image: acrworkflow1697742570182.azurecr.io/js-test-workflow1-img:latest
           ports:
             - containerPort: 3000
