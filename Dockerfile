@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:19
 ENV PORT 3000
 EXPOSE 3000
 
@@ -9,5 +9,3 @@ RUN npm install
 COPY . .
 
 CMD ["npm", "start"]
-#CMD ["npm", "dev"]
-

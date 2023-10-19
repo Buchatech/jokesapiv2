@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: JS-test-workflow1
+  labels:
+    app: JS-test-workflow1
+  namespace: js-test-workflow1-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: JS-test-workflow1
+  template:
+    metadata:
+      labels:
+        app: JS-test-workflow1
+    spec:
+      containers:
+        - name: JS-test-workflow1
+          image: registrywysteb.azurecr.io/js-test-workflow1-img:latest
+          ports:
+            - containerPort: 3000
