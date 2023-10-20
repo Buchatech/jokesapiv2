@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jsapitestworkflow2
+  labels:
+    app: jsapitestworkflow2
+  namespace: jsapitestworkflow2-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jsapitestworkflow2
+  template:
+    metadata:
+      labels:
+        app: jsapitestworkflow2
+    spec:
+      containers:
+        - name: jsapitestworkflow2
+          image: registrywysteb.azurecr.io/jsapitestworkflow2-img:latest
+          ports:
+            - containerPort: 3000
